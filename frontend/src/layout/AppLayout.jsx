@@ -1,5 +1,3 @@
-import { FireworksBackground } from "@/components/animate-ui/backgrounds/fireworks";
-
 export const AppLayout = ({ children }) => {
   return (
     <main>
@@ -11,7 +9,6 @@ export const AppLayout = ({ children }) => {
         />
         <div className="relative">
           <div className="relative z-40">{children}</div>
-          <FireworksBackground className="h-screen fixed inset-0 rounded-xl" />
         </div>
       </div>
     </main>
