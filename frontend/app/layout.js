@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/components/theme-provider";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
@@ -11,14 +12,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <ThemeProvider
-        attribute="class"
-        defaultTheme="dark"
-        enableSystem
-        disableTransitionOnChange
-      > */}
-      <body className={SpaceGrotesk.className}>{children}</body>
-      {/* </ThemeProvider> */}
+      <body className={SpaceGrotesk.className}>
+        {" "}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

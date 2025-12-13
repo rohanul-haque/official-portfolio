@@ -1,69 +1,50 @@
-"use client";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import hero_image from "../assets/logo.jpg";
+import TypingAnimation from "./TypingAnimation";
 
 const HeroSection = () => {
   return (
-    <section>
-      {/* Navbar */}
+    <section className="container mx-auto w-full px-4 pt-36 pb-20 lg:px-8">
+      <div className="flex flex-col items-center justify-between lg:flex-row">
+        {/* Text Content */}
+        <div className="text-center lg:w-1/2 lg:text-left">
+          <span className="mb-4 block text-xl font-bold">
+            👋 Hi! I'm Rohanul Haque
+          </span>
 
-      {/* User Avatars */}
-      <div className="flex flex-wrap items-center justify-center p-1.5 mt-24 rounded-full border border-green-900 bg-green-700/15 text-xs">
-        <div className="flex items-center">
-          <img
-            className="size-7 rounded-full border-3 border-white"
-            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=50"
-            alt="user1"
-          />
-          <img
-            className="size-7 rounded-full border-3 border-white -translate-x-2"
-            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=50"
-            alt="user2"
-          />
-          <img
-            className="size-7 rounded-full border-3 border-white -translate-x-4"
-            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=50"
-            alt="user3"
+          <TypingAnimation />
+          <p className="mt-6 md:text-lg">
+            I break down complex user experience problems 🧩 to create
+            integrity-focused solutions 🛡️ that connect billions of people 🌍🤝.
+          </p>
+          <div className="mt-8 flex items-center justify-center gap-2 lg:justify-start">
+            <Button className={"cursor-pointer"} variant={"destructive"}>
+              Get In Touch
+            </Button>
+            <Button className="cursor-pointer" variant={"default"}>
+              <a
+                href="https://docs.google.com/document/d/1TUvFqoXmxBQOo0dLlKaHJ9pwVbLPBSaychsEPVU-TKE/edit?tab=t.0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Resume
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        {/* Image */}
+        <div className="mt-20 flex justify-center md:w-[35%] lg:mt-0">
+          <Image
+            src={hero_image}
+            height={400}
+            width={400}
+            placeholder="blur"
+            alt="Hero Image"
+            className="rotate-0 transform rounded-2xl shadow-lg transition-transform duration-400 ease-in-out hover:rotate-0 hover:border-4 hover:border-purple-600 hover:p-[1px] md:rotate-6"
           />
         </div>
-        <p className="-translate-x-2">Join community of 1m+ founders</p>
-      </div>
-
-      {/* Title */}
-      <h1 className="text-4xl md:text-6xl text-center font-semibold max-w-4xl mt-5 bg-gradient-to-r from-white to-[#748298] text-transparent bg-clip-text">
-        Unlock Growth with Proven Business Solutions
-      </h1>
-
-      {/* Subtitle */}
-      <p className="text-slate-300 md:text-base max-md:px-2 text-center max-w-2xl mt-3">
-        Unlock potential with tailored strategies designed for success. Simplify
-        challenges, maximize results, and stay ahead in the competitive market.
-      </p>
-
-      {/* Buttons */}
-      <div className="flex items-center gap-2 mt-8 text-sm">
-        <button className="px-6 py-2.5 bg-green-600 hover:bg-green-700 transition rounded-full">
-          Get Started
-        </button>
-        <button className="flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-6 py-2.5">
-          <span>Learn More</span>
-          <svg
-            className="mt-0.5"
-            width="6"
-            height="8"
-            viewBox="0 0 6 8"
-            fill="none"
-          >
-            <path
-              d="M1.25.5 4.75 4l-3.5 3.5"
-              stroke="currentColor"
-              strokeOpacity=".4"
-            />
-          </svg>
-        </button>
-      </div>
-
-      {/* Logos Section (same as your HTML) */}
-      <div className="flex flex-wrap items-center justify-center gap-14 mt-14 max-md:px-2">
-        {/* Place your brand SVGs here (unchanged) */}
       </div>
     </section>
   );
